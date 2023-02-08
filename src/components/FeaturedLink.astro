@@ -2,25 +2,24 @@
 import { Icon } from "astro-icon";
 
 interface Props {
-  featuredLinkIcon: string;
-  featuredLinkTitle: string;
-  featuredLinkPath: string;
+  linkIcon: string;
+  linkTitle: string;
+  linkUrl: string;
 }
 
-const { featuredLinkIcon, featuredLinkTitle, featuredLinkPath } = Astro.props;
+const { linkIcon, linkTitle, linkUrl } = Astro.props;
 ---
 
 <div
   class="flex flex-col p-1 text-center transition-all duration-500 bg-white rounded lg:w-32 w-28 bg-opacity-20 backdrop-filter backdrop-blur-lg hover:bg-opacity-40 hover:scale-110"
 >
-  <a class="text-xs text-white sm:text-base" href={featuredLinkPath}>
+  <a class="text-xs text-white sm:text-base" href={linkUrl}>
     <div class="flex justify-center">
-      <Icon class="h-24 p-2" name={featuredLinkIcon} />
+      <Icon class="h-24 p-2" name={linkIcon} />
     </div>
     <div class="flex flex-col break-words">
       <hr class="h-px mx-6 my-4 bg-white border-0 opacity-50" />
-
-      <p class="text-sm text-white sm:text-lg">{featuredLinkTitle}</p>
+      <p class="text-sm text-white sm:text-lg">{linkTitle}</p>
     </div>
   </a>
 </div>

@@ -1,12 +1,13 @@
 ---
 import { Icon } from "astro-icon";
+
 interface Props {
-  linkIcon?: string;
+  linkIcon: string;
   linkTitle: string;
-  linkPath: string;
-  linkDescription?: string;
+  linkUrl: string;
 }
-const { linkTitle, linkDescription, linkUrl, linkIcon } = Astro.props;
+
+const { linkIcon, linkTitle, linkUrl, linkDescription } = Astro.props;
 ---
 
 <div class="w-full gap-y-8">
