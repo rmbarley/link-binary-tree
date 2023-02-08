@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon";
+interface Props {
+  linkIcon?: string;
+  linkTitle: string;
+  linkPath: string;
+  linkDescription?: string;
+}
+const { linkTitle, linkDescription, linkUrl, linkIcon } = Astro.props;
+---
+
+<div class="w-full gap-y-8">
+  <a
+    class="flex justify-center items-center cursor-pointer p-4 text-center text-white transition-all duration-500 bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl lg:text-xl hover:bg-opacity-40 hover:scale-110"
+    href={linkUrl}
+  >
+    {linkIcon && <Icon class="h-12 p-2" name={linkIcon} />}
+    <span class="font-semibold">{linkTitle}{" "}</span></a
+  >
+  {linkDescription}
+</div>

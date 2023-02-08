@@ -1,15 +1,45 @@
 ---
+import FeaturedLayout from "@layouts/FeaturedLayout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import StandardLinkLayout from "@layouts/StandardLinkLayout.astro";
+
+import Avatar from "@components/Avatar.astro";
+import FeaturedLink from "@components/FeaturedLink.astro";
+import StandardLink from "@components/StandardLink.astro";
+import SocialFooter from "@components/SocialFooter.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="My Links">
+  <Avatar />
+  <FeaturedLayout>
+    <FeaturedLink
+      featuredLinkIcon="mdi:github"
+      featuredLinkTitle="Github"
+      featuredLinkPath="https://github.com/rmbarley"
+    />
+    <FeaturedLink
+      featuredLinkIcon="ic:round-portrait"
+      featuredLinkTitle="My Portfolio"
+      featuredLinkPath="https://ryanbarley.com"
+    />
+  </FeaturedLayout>
+  <StandardLinkLayout>
+    <StandardLink
+      linkTitle="LinkedIn"
+      linkDescription=""
+      linkIcon="ri:linkedin-box-line"
+      linkPath="https://linkedin.com/in/rmbarley"
+    />
+    <StandardLink
+      linkTitle="Polywork"
+      linkIcon="simple-icons:polywork"
+      linkPath="https://polywork.com/ryan_barley"
+    />
+    <StandardLink
+      linkTitle="Twitter"
+      linkIcon="mdi:twitter"
+      linkPath="https://twitter.com/ryanbarleydev"
+    />
+  </StandardLinkLayout>
+  <SocialFooter />
+</MainLayout>
